@@ -1,0 +1,7 @@
+[template]
+src = "http.conf.tmpl"
+dest = "/etc/httpd/conf/httpd.conf"
+uid = 0
+gid = 0
+mode = "0644"
+keys = []

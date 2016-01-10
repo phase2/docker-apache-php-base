@@ -1,0 +1,31 @@
+<VirtualHost 0.0.0.0:80>
+  ServerName localhost
+
+  ## Use the default docroot.
+  DocumentRoot "{{getenv "DOCROOT"}}"
+  DirectoryIndex index.php index.html
+
+  ## Additional overrides for the default VirtualHost directory.
+  <Directory "{{getenv "DOCROOT"}}">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Require all granted
+  </Directory>
+
+  ## Logging
+  CustomLog "|/usr/sbin/cronolog /var/log/httpd/%Y-%m-%d.access_log" combined
+  ErrorLog "|/usr/sbin/cronolog /var/log/httpd/%Y-%m-%d.error_log"
+
+  ## Security
+  ServerSignature Off
+
+  ## Define a php-fpm proxy connection.
+  <Proxy "fcgi://localhost:9000">
+    ProxySet timeout={{getenv "PROXY_TIMEOUT"}}
+  </Proxy>
+
+  ## Redirect to the proxy
+  <FilesMatch \.php$>
+      SetHandler proxy:fcgi://localhost:9000
+  </FilesMatch>
+</VirtualHost>

@@ -1,0 +1,10 @@
+; Enable xdebug extension module
+{{ $xdebug := getenv "PHP_XDEBUG" }}
+{{ if eq $xdebug "true" }}
+zend_extension=xdebug.so
+{{ end }}
+
+; Drupal 8 requires this be set to 256.
+xdebug.max_nesting_level=256
+
+; see http://xdebug.org/docs/all_settings

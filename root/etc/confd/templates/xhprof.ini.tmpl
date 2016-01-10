@@ -1,0 +1,9 @@
+; Enable xhprof extension module
+{{ $xhprof := getenv "PHP_XHPROF" }}
+{{ if eq $xhprof "true" }}
+extension = xhprof.so
+{{ end }}
+
+; You can either pass the directory location as an argument to the constructor
+; for XHProfRuns_Default() or set xhprof.output_dir ini param.
+xhprof.output_dir = /tmp

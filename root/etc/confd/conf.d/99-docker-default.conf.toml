@@ -1,0 +1,7 @@
+[template]
+src = "99-docker-default.conf.tmpl"
+dest = "/etc/httpd/conf.d/99-docker-default.conf"
+uid = 0
+gid = 0
+mode = "0644"
+keys = []
