@@ -1,8 +1,7 @@
 FROM phase2/servicebase
 
-RUN yum -y update && \
-    yum -y install \
-      httpd \
+RUN yum -y update && yum -y install httpd
+RUN yum -y install \
       cronolog \
       centos-release-scl-rh
 
