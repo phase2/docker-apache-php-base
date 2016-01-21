@@ -19,4 +19,6 @@ ENV PHP_OPCACHE_MEMORY      192
 ENV PHP_XDEBUG              false
 ENV PHP_XHPROF              false
 ENV PHP_TIMEZONE            UTC
+ENV PHP_POST_MAX_SIZE       12M
+ENV PHP_UPLOAD_MAX_FILESIZE 10M
 ENV DOCROOT                 /var/www/html
