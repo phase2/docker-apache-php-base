@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t phase2/apache-php .
+docker build -t phase2/apache-php-base .
