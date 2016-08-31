@@ -2,9 +2,18 @@
 
 # phase2/apache-php-base
 
-The base image for Apache and PHP-fpm services. It exposes a running Apache+php-fpm service on port 80.
+A base image for [phase2/docker-apache-php](https://hub.docker.com/r/phase2/apache-php). Includes Apache and default VirtualHost configured with php-fpm proxy. Does not include the php runtime.
 
 Based on [phase2/servicebase](https://hub.docker.com/r/phase2/servicebase/)
+
+# Default VirtualHost
+- **Socket:** 0.0.0.0:80
+- **Server name:** localhost
+- **php-fpm proxy:** fcgi://localhost:9000
+- **Docroot:** /var/www/html (configurable, see below)
+
+## Logs
+Apache error and access logs are written to `/var/log/httpd`.
 
 ## Configuration Options
 This image defines several environment variables that it uses when building the container. The default values can be overridden in your build by adding them to your docker-compose file.
