@@ -6,7 +6,7 @@ A base image for [phase2/docker-apache-php](https://hub.docker.com/r/phase2/apac
 
 Based on [phase2/servicebase](https://hub.docker.com/r/phase2/servicebase/)
 
-# Default VirtualHost
+## Default VirtualHost
 - **Socket:** 0.0.0.0:80
 - **Server name:** localhost
 - **php-fpm proxy:** fcgi://localhost:9000
