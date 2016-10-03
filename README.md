@@ -9,7 +9,7 @@ Based on [phase2/servicebase](https://hub.docker.com/r/phase2/servicebase/)
 ## Default VirtualHost
 - **Socket:** 0.0.0.0:80
 - **Server name:** localhost
-- **php-fpm proxy:** fcgi://localhost:9000
+- **php-fpm proxy:** fcgi://localhost:9001
 - **Docroot:** /var/www/html (configurable, see below)
 
 ## Logs
