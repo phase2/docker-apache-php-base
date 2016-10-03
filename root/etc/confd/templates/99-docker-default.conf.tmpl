@@ -20,12 +20,12 @@
   ServerSignature Off
 
   ## Define a php-fpm proxy connection.
-  <Proxy "fcgi://localhost:9000">
+  <Proxy "fcgi://localhost:9001">
     ProxySet timeout={{getenv "PROXY_TIMEOUT"}}
   </Proxy>
 
   ## Redirect to the proxy
   <FilesMatch \.php$>
-      SetHandler proxy:fcgi://localhost:9000
+      SetHandler proxy:fcgi://localhost:9001
   </FilesMatch>
 </VirtualHost>
