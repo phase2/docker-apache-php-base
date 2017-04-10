@@ -7,6 +7,8 @@ RUN yum -y install \
 
 EXPOSE 80
 
+RUN mkdir -p /var/lib/php/session
+
 COPY root /
 
 VOLUME ["/var/log/httpd"]
