@@ -7,9 +7,11 @@ RUN yum -y install \
 
 EXPOSE 80
 
+RUN mkdir -p /var/lib/php/session
+
 COPY root /
 
-VOLUME ["/var/log/httpd"]
+VOLUME ["/var/log/httpd", "/var/lib/php/session"]
 
 ENV PROXY_TIMEOUT           120
 ENV PHP_MAX_EXECUTION_TIME  60

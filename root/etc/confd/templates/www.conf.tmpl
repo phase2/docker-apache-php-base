@@ -217,7 +217,6 @@ catch_workers_output = yes
 ;                specified at startup with the -d argument
 ;php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com
 php_flag[display_errors] = off
-;php_admin_value[error_log] = /opt/rh/php55/root/var/log/php-fpm/www-error.log
 php_admin_flag[log_errors] = on
 php_value[max_execution_time] = {{getenv "PHP_MAX_EXECUTION_TIME"}}
 php_value[memory_limit] = {{getenv "PHP_MEMORY_LIMIT"}}
@@ -228,7 +227,7 @@ php_value[upload_max_filesize] = {{getenv "PHP_UPLOAD_MAX_FILESIZE"}}
 
 ; Set session path to a directory owned by process user
 php_value[session.save_handler] = files
-php_value[session.save_path]    = /opt/rh/php55/root/var/lib/php/session
+php_value[session.save_path]    = /var/lib/php/session
 
 ; Pass the full ENV through.
 clear_env = false
