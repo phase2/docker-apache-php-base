@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv sh
+
+echo "Applying ownership and permissions to $DOCROOT"
+chown apache $DOCROOT/sites/default/files
+chmod 0755 $DOCROOT/sites/default/files
