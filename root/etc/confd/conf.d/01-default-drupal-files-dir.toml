@@ -1,7 +1,0 @@
-[template]
-src = "drupal-files-dir.tmpl"
-dest = "/etc/fix-attrs.d/01-default-drupal-files-dir"
-uid = 0
-gid = 0
-mode = "0644"
-keys = []

@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv bash
+
+for DIR in $(ls -d ${DOCROOT}/sites/*/files); do
+  s6-echo -- Fixing ownership and permissions of $DIR
+  chown --quiet apache:apache $DIR
+  OWNERR=$?
+  chmod --quiet 0755 $DIR
+  PERMERR=$?
+  if [ $OWNERR -ne 0 -o $PERMERR -ne 0 ]; then
+    EXPECTED_ERROR=$(df --output=fstype $DIR 2>/dev/null | grep nfs | wc -l)
+    if [ $EXPECTED_ERROR -ne 1 ]; then
+      s6-echo -- There was a failure detected fixing ownership and permissions.
+      s6-echo -- Error codes returned were $OWNERR for ownership and $PERMERR for permissions.
+    fi
+  fi
+done
+
