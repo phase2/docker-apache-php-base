@@ -43,20 +43,22 @@ processed on startup with environment variables passed in via the docker run
 command-line or via your docker-compose manifest file. Here are the "tunable"
 configurations offered by this image.
 
-* `PROXY_TIMEOUT`: [`120`] Apache `ProxySet timeout` value for the php-fpm proxy.
+* `DOCROOT`: [`/var/www/html`] Apache document root.
 * `PHP_MAX_EXECUTION_TIME`: [`60`] PHP `max_execution_time` value.
 * `PHP_MAX_CHILDREN`: [`5`] Apache process manager `pm.max_children` value.
 * `PHP_MEMORY_LIMIT`: [`256m`] PHP `memory_limit` value.
 * `PHP_OPCACHE_MEMORY`: [`192`] PHP `opcache.memory_consumption` value.
+* `PHP_POST_MAX_SIZE`: [`12M`] PHP `post_max_size` value.
+* `PHP_TIMEZONE`: [`UTC`] PHP `date.timezone` value.
+* `PHP_UPLOAD_MAX_FILESIZE`: [`10M`] PHP `upload_max_filesize` value.
 * `PHP_XDEBUG`: [`"false"`|`"true"`] A string literal to enable PHP Xdebug.
   Defaults to `"false"`.
 * `PHP_XHPROF`: [`"false"`|`"true"`] A string literal to enable PHP xhprof.
   Sets the `xhprof.output_dir` directive to /tmp when enabled. Only usable on
   PHP versions less than PHP 7. Defaults to `"false"`.
-* `PHP_TIMEZONE`: [`UTC`] PHP `date.timezone` value.
-* `PHP_POST_MAX_SIZE`: [`12M`] PHP `post_max_size` value.
-* `PHP_UPLOAD_MAX_FILESIZE`: [`10M`] PHP `upload_max_filesize` value.
-* `DOCROOT`: [`/var/www/html`] Apache document root.
+* `PHP_YAML`: [`"false"`|`"true"`] A string literal to enable PHP YAML extension.
+  Defaults to `"false"`.
+* `PROXY_TIMEOUT`: [`120`] Apache `ProxySet timeout` value for the php-fpm proxy.
 
 ## Security Reports
 
