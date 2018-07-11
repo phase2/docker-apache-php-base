@@ -59,6 +59,11 @@ configurations offered by this image.
 * `PHP_YAML`: [`"false"`|`"true"`] A string literal to enable PHP YAML extension.
   Defaults to `"false"`.
 * `PROXY_TIMEOUT`: [`120`] Apache `ProxySet timeout` value for the php-fpm proxy.
+* `PHPFPM_START_SERVERS`: [`5`] `Start Servers` The number of child processes created on startup.
+* `PHPFPM_MIN_SPARE_SERVERS`: [`5`] `Min Spare Servers` The desired minimum number of idle server processes.
+* `PHPFPM_MAX_SPARE_SERVERS`: [`35`] `Max Spare Servers` The desired maximum number of idle server processes.
+* `PHPFPM_MAX_REQUESTS`: [`200`] `Max Request` The number of requests each child process should execute before respawning.
+
 
 ## Security Reports
 
