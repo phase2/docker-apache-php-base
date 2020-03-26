@@ -13,8 +13,8 @@
   </Directory>
 
   ## Logging
-  CustomLog "|/usr/sbin/cronolog /var/log/httpd/%Y-%m-%d.access_log" combined
-  ErrorLog "|/usr/sbin/cronolog /var/log/httpd/%Y-%m-%d.error_log"
+  ErrorLog /dev/stderr
+  TransferLog /dev/stdout
 
   ## Security
   ServerSignature Off
